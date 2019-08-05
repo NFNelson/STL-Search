@@ -24,19 +24,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/SearchBackground" />
+        app:srcCompat="@mipmap/search_background" />
 
     <EditText
         android:id="@+id/SearchBox"
         android:layout_width="355dp"
         android:layout_height="42dp"
         android:backgroundTint="#FFFFFF"
+        android:editable="true"
         android:ems="10"
         android:hint="Search for 3D files!"
         android:inputType="textPersonName"
         android:outlineProvider="none"
         android:shadowColor="#00686868"
-        android:singleLine="false"
+        android:singleLine="true"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textColorHint="#DFFCFCFC"
@@ -53,13 +54,14 @@
         tools:layout_editor_absoluteY="193dp" />
 
     <Button
-        android:id="@+id/Search Button"
+        android:id="@+id/SearchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
         android:backgroundTint="#00E2DCDC"
         android:foregroundTint="#00CFC2C2"
         android:text="Search!"
+        android:onClick="search"
         android:textColor="#FFFFFF"
         tools:layout_editor_absoluteX="162dp"
         tools:layout_editor_absoluteY="325dp" />
