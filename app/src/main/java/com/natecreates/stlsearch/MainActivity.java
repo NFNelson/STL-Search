@@ -9,6 +9,8 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -38,8 +40,12 @@ public class MainActivity extends AppCompatActivity {
         searchStr = searchInput.getText().toString();
         //string of website
         String html = "";
+
+
         //url to be searched
         String url = "https://www.yeggi.com/q/"+searchStr+"/";
+        int pageNumber = 0;
+
 
 
         HttpClient client = new DefaultHttpClient();
@@ -55,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         }
         in.close();
         html = str.toString();
-
+        Document dom = Jsoup.parse(html);
 
 
 
